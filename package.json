@@ -1,0 +1,50 @@
+{
+  "name": "risk-guard",
+  "displayName": "Risk Guard",
+  "description": "Scan git diff for risky changes and surface them in Problems.",
+  "version": "0.0.1",
+  "publisher": "your-name",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "main": "./out/extension.js",
+  "activationEvents": [
+    "workspaceContains:.git",
+    "onCommand:riskGuard.scanGitDiff"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "riskGuard.scanGitDiff",
+        "title": "Risk Guard: Scan Git Diff"
+      }
+    ],
+    "configuration": {
+      "title": "Risk Guard",
+      "properties": {
+        "riskGuard.useStagedDiff": {
+          "type": "boolean",
+          "default": false,
+          "description": "If true, scan staged changes (git diff --cached); otherwise scan unstaged changes (git diff)."
+        },
+        "riskGuard.scanIntervalSeconds": {
+          "type": "number",
+          "default": 30,
+          "minimum": 5,
+          "description": "Background scan interval in seconds (min 5 seconds)."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p .",
+    "watch": "tsc -watch -p .",
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "@types/node": "^18.17.0",
+    "@types/vscode": "^1.85.0",
+    "typescript": "^5.2.2"
+  }
+}
