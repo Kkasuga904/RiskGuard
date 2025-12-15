@@ -30,29 +30,3 @@ Small infra/config diffs can cause production incidents. CI and PR reviews are o
 ```bash
 npm install
 npm run compile
-<<<<<<< HEAD
-Press F5 to launch the Extension Development Host.
-
-Settings
-You can configure Risk Guard in
-VS Code → Settings → Extensions → Risk Guard
-
-riskGuard.useStagedDiff
-Scan staged changes (git diff --cached) instead of unstaged
-Default: false
-
-riskGuard.scanIntervalSeconds
-Background scan interval (minimum 5 seconds)
-Default: 30
-
-Design philosophy
-Fail early, locally, and deterministically
-
-Prefer explainable rules over opaque heuristics
-
-Optimize for real-world infra mistakes, not academic linting
-
-
-
-=======
->>>>>>> 6619062 (Add initial README describing Risk Guard)
