@@ -109,5 +109,3 @@ Optimize for real-world infra mistakes, not academic linting
 
 
 
-
-我々は宇宙人だ
